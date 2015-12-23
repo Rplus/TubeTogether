@@ -23,3 +23,8 @@ gulp.task('serve', function () {
 gulp.task('dev', ['serve'], function () {
   gulp.watch(['app/*.*'], browserSync.reload);
 });
+
+gulp.task('deploy', function () {
+  return gulp.src('app/*/')
+    .pipe($.ghPages());
+});
